@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafe Name</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Cafe Name</h1>
+    <p>A short tagline about the cafe.</p>
+    <a class="cta" href="#order">Place an order</a>
+  </header>
+
+  <main>
+    <section id="menu">
+      <h2>Menu</h2>
+      <div id="menuGrid">
+        <div class="card">
+          <h3>Menu item 1</h3>
+          <p class="price">12,000₮</p>
+          <p>A short description of this item.</p>
+        </div>
+        <div class="card">
+          <h3>Menu item 2</h3>
+          <p class="price">12,000₮</p>
+          <p>A short description of this item.</p>
+        </div>
+        <div class="card">
+          <h3>Menu item 3</h3>
+          <p class="price">12,000₮</p>
+          <p>A short description of this item.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="order">
+      <h2>Place an order</h2>
+      <form>
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+        </div>
+        <div>
+          <label for="item">Select an item</label>
+          <select id="item" name="item" required>
+            <option value="">Choose a menu item</option>
+            <option value="menu-item-1">Menu item 1</option>
+            <option value="menu-item-2">Menu item 2</option>
+            <option value="menu-item-3">Menu item 3</option>
+          </select>
+        </div>
+        <div>
+          <label for="time">Pickup time</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+        <button type="submit">Submit order</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <address>Cafe address</address>
+    <p>Hours: Add business hours</p>
+    <nav aria-label="Social media">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+    </nav>
+  </footer>
+</body>
+</html>
