@@ -1,0 +1,8 @@
+:root { --brand: #b5651d; --brand-dark: #8a4a12; --bg: #fff8f0; --text: #2b2b2b; --radius: 12px;}
+body {background: var(--bg); color: var(--text)}
+.hero h1{ font-size: 2rem; color: var(--text) }
+.cta {background: var(--brand); min-height: 44px}
+.menu-grid {display: grid; grid-template-columns: 1fr; }
+.card { border-radius: var(--radius) }
+form input, form button {min-height: 44px}
+@media (min-width: 768px) { .menu-grid { grid-template-columns: repeat(3, 1fr); } }
