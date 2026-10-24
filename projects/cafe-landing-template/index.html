@@ -16,22 +16,7 @@
   <main>
     <section id="menu">
       <h2>Menu</h2>
-      <div id="menuGrid">
-        <div class="card">
-          <h3>Menu item 1</h3>
-          <p class="price">12,000₮</p>
-          <p>A short description of this item.</p>
-        </div>
-        <div class="card">
-          <h3>Menu item 2</h3>
-          <p class="price">12,000₮</p>
-          <p>A short description of this item.</p>
-        </div>
-        <div class="card">
-          <h3>Menu item 3</h3>
-          <p class="price">12,000₮</p>
-          <p>A short description of this item.</p>
-        </div>
+      <div class="menu-grid">
       </div>
     </section>
 
@@ -60,6 +45,8 @@
           <input type="time" id="time" name="time" required>
         </div>
         <button type="submit">Submit order</button>
+        <p id="error"></p>
+        <p id="success"></p>
       </form>
     </section>
   </main>
@@ -67,10 +54,12 @@
   <footer>
     <address>Cafe address</address>
     <p>Hours: Add business hours</p>
+    <p class="phone"></p>
     <nav aria-label="Social media">
       <a href="#">Instagram</a>
       <a href="#">Facebook</a>
     </nav>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
