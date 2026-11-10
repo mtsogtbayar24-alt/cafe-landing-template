@@ -24,16 +24,18 @@ document.querySelector('.phone').textContent = CONFIG.phone;
 
 
 document.querySelector('#error').textContent = '';
+const form = document.querySelector('form');
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  const form = document.querySelector('form');
-
-  const name = document.querySelector('#name').value.trim();
-  const phone = document.querySelector('#phone').value.trim();
+  const order = {
+  name: document.querySelector('#name').value.trim(),
+  phone: document.querySelector('#phone').value.trim()
+  };
   
-  if(name === ''){
+  console.log(order);
+  if (order.name === '') {
     document.querySelector('#error').textContent = "Нэр хоосон байж болохгүй.";
-  } else if(!/^\d{8}$/.test(phone)){
+  } else if (!/^\d{8}$/.test(order.phone)) {
     document.querySelector('#error').textContent = "Утасны дугаар алдаатай байна.";
   } else {
     document.querySelector('#success').textContent = "Захиалга хүлээн авлаа!";
