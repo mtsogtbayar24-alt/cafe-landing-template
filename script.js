@@ -25,7 +25,7 @@ document.querySelector('.phone').textContent = CONFIG.phone;
 
 document.querySelector('#error').textContent = '';
 const form = document.querySelector('form');
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit', async (event) => {
   event.preventDefault();
   const order = {
   name: document.querySelector('#name').value.trim(),
@@ -38,7 +38,21 @@ form.addEventListener('submit', (event) => {
   } else if (!/^\d{8}$/.test(order.phone)) {
     document.querySelector('#error').textContent = "Утасны дугаар алдаатай байна.";
   } else {
-    document.querySelector('#success').textContent = "Захиалга хүлээн авлаа!";
-    form.style.display = 'none';
-  }
-})
+    try {
+      const response = await fetch("https://telegrambot-srd3.onrender.com/new-order", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(order)
+      });
+
+        if (response.ok) {  
+          document.querySelector('#success').textContent = "Захиалга хүлээн авлаа!";
+          form.style.display = 'none';
+          } else {
+            document.querySelector('#error').textContent = "Захиалга илгээгдсэнгүй, дахин оролдоно уу";
+          }
+          } catch (error) {
+            document.querySelector('#error').textContent = "Сүлжээний алдаа гарлаа, дахин оролдоно уу";
+          }
+        }
+      });
